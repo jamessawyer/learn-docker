@@ -16,7 +16,7 @@ docker rm -f web-ping # 先移除这个容器
 docker run --name web-ping --env TARGET=google.com diamol/ch03-web-ping
 ```
 
-![02_env_variables](imgs/#2 构建自己的Docker镜像/02_env_variables.jpg)
+![02_env_variables](imgs/02/02_env_variables.jpg)
 
 容器中的环境变量，一般定义在 `Dockerfile` 的较上面：
 
@@ -97,7 +97,7 @@ ea5e6bdefb88        9 minutes ago       /bin/sh -c #(nop)  CMD ["node" "/web-pin
 
 其中 **`CREARED BY`** 命令就是 **`Dockerfile`** 中定义的指令, 每一行都创建一个image layer。**理解镜像layers对高效使用Docker十分重要**
 
-**Docker images 是image layers的逻辑集合，而Layers本质是物理存储在Docker引擎的cache中的文件。另外 image layers能够被不同的images或者containers之间共享**，比如有很多容器运行Nodejs应用，它们将共享包含了nodejs运行时的image layers。如下图所示：![03_image_layer_share](imgs/#2 构建自己的Docker镜像/03_image_layer_share.jpg)
+**Docker images 是image layers的逻辑集合，而Layers本质是物理存储在Docker引擎的cache中的文件。另外 image layers能够被不同的images或者containers之间共享**，比如有很多容器运行Nodejs应用，它们将共享包含了nodejs运行时的image layers。如下图所示：![03_image_layer_share](imgs/02/03_image_layer_share.jpg)
 
 可以使用下面命令查看images的大小：
 
